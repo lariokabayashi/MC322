@@ -1,6 +1,6 @@
 ## Notebook 1 sobre Empréstimos
 
-[Notebook1](lab01/notebook/Emprestimo01.ipynb)
+[Notebook1](https://github.com/lariokabayashi/MC322/blob/main/lab01/notebook/Empresimo01.ipynb)
 
 
 ## Notebook 2 sobre Empréstimos e TAD (opcional)
