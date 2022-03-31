@@ -1,0 +1,20 @@
+package mc322.lab03;
+
+public class AquarioLombriga {
+	int TamLombriga;
+	int PosCabeça;
+	int TamAquario;
+	
+	public AquarioLombriga (int pTamAquario, int pTamLombriga, int pPosCabeça) {
+        TamAquario = pTamAquario;
+        TamLombriga = pTamLombriga;
+        PosCabeça = pPosCabeça;
+    }
+    void crescer (int TamAquario, int TamLombriga, int PosCabeça) {
+        TamLombriga += 1;
+    }
+    void Mover(int TamAquario, int TamLombriga, int PosCabeça){
+    	PosCabeça -= 1;
+    }
+    
+}
