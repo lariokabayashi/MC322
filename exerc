@@ -1,0 +1,48 @@
+public class SegundoGrau {
+    Grafico saida;
+    int a, b, c;
+    int y;
+    int quantidade;
+    
+    SegundoGrau(int a, int b, int c, int quantidade) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.quantidade = quantidade;
+        saida = null;
+   }
+    
+    void conecta(Grafico saida) {
+      this.saida = saida;
+   }
+    
+    void apresenta() {
+        for (int i = quantidade; i > 0; i--) {
+            y = a*(i*i) + b*i + c;
+            saida.plota(y);
+        }
+    }
+}
+
+public class Grafico {
+   boolean preenchido;
+   char caractere;
+   
+   Grafico(boolean preenchido, char caractere) {
+      this.preenchido = preenchido;
+      this.caractere = caractere;
+   }
+
+   void plota(int valor) {
+      for (int v = 1; v < valor; v++)
+         System.out.print((preenchido) ? caractere : ' ');
+      System.out.println(caractere);
+   }
+}
+
+Grafico g = new Grafico(false, '*');
+
+SegundoGrau s = new SegundoGrau(1, -4, 0, 30);
+
+s.conecta(g);
+s.apresenta();
