@@ -1,0 +1,32 @@
+/*ckage pt.c02oo.s02classe.s03lombriga;
+
+public class AppLombriga {
+
+   public static void main(String[] args) {
+	   
+      Toolkit tk = Toolkit.start();
+      
+      String lombrigas[] = tk.recuperaLombrigas();
+      
+      for (int l = 0; l < lombrigas.length; l++) {
+    	  Animacao objAnimaçao = new Animacao(lombrigas[l]);
+    	  String img[] = new String[lombrigas[l].length()-6];
+	      tk.gravaPasso("=====");
+	      for(int i = 0; i<img.length; i++) {
+	    	  objAnimaçao.Passo(img[i]);
+	    	  tk.gravaPasso(img[i]);
+	      }
+      }
+      
+      /*tk.gravaPasso("=====");
+      tk.gravaPasso("##O@@@##");
+      tk.gravaPasso("#O@@@###");
+      tk.gravaPasso("#O@@@@##");
+      tk.gravaPasso("O@@@@###");
+      tk.gravaPasso("@@@@O###");
+      tk.gravaPasso("#@@@@O##");*/
+      
+      tk.stop();
+   }
+
+}*/
