@@ -20,16 +20,20 @@ public class Tabuleiro {
     public void MovePeca(String PosIni, String PosFinal) {
     	int i = 0, j = 0;
     	
+    	/* Separando o i e j das posições e transformando em int */
 	    int Iini = Integer.parseInt(PosIni.substring(1)) - 1;
 	    int Jini = (int) PosIni.toCharArray()[0] - 97;
 	    int Ifinal = Integer.parseInt(PosFinal.substring(1)) - 1;
 	    int Jfinal = (int) PosFinal.toCharArray()[0] - 97;
-	
+	    
+	    /* Peça que está na posição inicial, vai para final, então posição inicial ficará vazia */
 	    this.tab[Iini][Jini].vazio = 1;
 	    this.tab[Iini][Jini].simbolo = '-';
+	    /* posição final preenchida por peça*/
 	    this.tab[Ifinal][Jfinal].vazio = 0;
 	    this.tab[Ifinal][Jfinal].simbolo = 'P';
 	    
+	    /* i e j  é a posição da peça que foi pulada, durante o movimento da outra peça */
 	    if (Iini == Ifinal) {
 	    	i = Iini;
 	    	if (Jini > Jfinal)
@@ -44,11 +48,12 @@ public class Tabuleiro {
 	    	else
 	    		i = Iini + 1;
 	    }
+	    /* Posição da peça que foi pulada será vazia */
 	    this.tab[i][j].vazio = 1;
 	    this.tab[i][j].simbolo = '-';
     }
     
-    public char[][] GeraTab() {
+    public char[][] GeraTab() { /*inicializa tabuleiro*/
     	char[][] board = new char[7][7];
     	for (int i = 0; i < 7; i++) {
         	for (int j = 0; j < 7; j++) {
@@ -58,13 +63,13 @@ public class Tabuleiro {
     	return board;
     }
 
-    public int temPeça(int Ifinal, int Jfinal) {
+    public int temPeça(int Ifinal, int Jfinal) { /*retorna se há peça na posição (1) ou não (0)*/
     	if (this.tab[Ifinal][Jfinal].vazio == 1)
     		return 0;
     	else
     		return 1;
     }
-    public Peça retornaPeça(int i, int j) {
+    public Peça retornaPeça(int i, int j) { 
     	return this.tab[i][j];
     }
 }
